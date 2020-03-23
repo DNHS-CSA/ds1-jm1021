@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1C5F3524290E4B00211B0D /* Reverser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1C5F3424290E4B00211B0D /* Reverser.storyboard */; };
 		6D7056AC2417338A007E7B6B /* Pythagoras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7056AB2417338A007E7B6B /* Pythagoras.storyboard */; };
 		6D7056AE241733B1007E7B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7056AD241733B1007E7B6B /* Main.storyboard */; };
 		6D7DA4E724168C4600533201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DA4E624168C4600533201 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		6C96B4DBCCDB67BFCC41E528 /* Pods_SwiftPortfolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPortfolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1C5F3424290E4B00211B0D /* Reverser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reverser.storyboard; sourceTree = "<group>"; };
 		6D7056AB2417338A007E7B6B /* Pythagoras.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pythagoras.storyboard; sourceTree = "<group>"; };
 		6D7056AD241733B1007E7B6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6D7DA4E324168C4600533201 /* SwiftPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,9 +57,10 @@
 			isa = PBXGroup;
 			children = (
 				6D7DA4EF24168C4800533201 /* Assets.xcassets */,
+				6D7DA4F124168C4800533201 /* LaunchScreen.storyboard */,
 				6D7056AD241733B1007E7B6B /* Main.storyboard */,
 				6D7056AB2417338A007E7B6B /* Pythagoras.storyboard */,
-				6D7DA4F124168C4800533201 /* LaunchScreen.storyboard */,
+				6D1C5F3424290E4B00211B0D /* Reverser.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				6D7DA4F324168C4800533201 /* LaunchScreen.storyboard in Resources */,
 				6D7056AE241733B1007E7B6B /* Main.storyboard in Resources */,
 				6D7DA4F024168C4800533201 /* Assets.xcassets in Resources */,
+				6D1C5F3524290E4B00211B0D /* Reverser.storyboard in Resources */,
 				6D7056AC2417338A007E7B6B /* Pythagoras.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
