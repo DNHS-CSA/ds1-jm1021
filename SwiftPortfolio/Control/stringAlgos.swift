@@ -10,21 +10,30 @@ import Foundation
 
 func reverseStringLoop( inText:String ) -> String {
     
-    let revText = inText + "Loop"
+    let method = "Loop: "
     
-    return revText
+    var n = 1;
+    var revText = ""
+    while ( n <= inText.count ) {
+        revText = revText + String(inText[inText.index(inText.endIndex, offsetBy: -n)])
+        n += 1
+    }
+
+    
+    return method + revText
 }
 
 func reverseStringArray( inText:String ) -> String {
     
-    let revText = inText + "Array"
+    let method = "Array: "
     
-    return revText
+    return method + inText
 }
 
 func reverseStringRecursion( inText:String ) -> String {
     
-    let revText = inText + "Recursion"
+    let method = "Recursion: "
     
-    return revText
+    
+    return method + inText
 }
