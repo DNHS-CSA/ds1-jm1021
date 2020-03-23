@@ -41,8 +41,15 @@ func revStringSwap( inText:String ) -> String {
     return method + mutInText
 }
 
+// Reverse string by swapping 1st and last, 2nd and last-1, ...
+func revStringBuiltIn( inText:String ) -> String {
+    let method = "Built in: "
+
+    return method + String(inText.reversed())
+}
+
 // Swap characters, mutate String positions i & j
-func swapChars( mutInText: inout String, i:Int, j:Int) {
+func swapChars( mutInText: inout String, i:Int, j:Int ) {
     // find characters
     let swapI = mutInText.index(mutInText.startIndex, offsetBy: i)
     let swap1 = mutInText[swapI]
@@ -55,5 +62,3 @@ func swapChars( mutInText: inout String, i:Int, j:Int) {
     mutInText.remove(at:swapJ)
     mutInText.insert(swap1, at:swapJ)
 }
-
-
