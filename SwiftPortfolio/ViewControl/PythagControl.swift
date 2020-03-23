@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PythagController: UIViewController {
     
     // IBOutlet connects to Storyboard items, I had problems with Drag
     @IBOutlet weak var side1: UITextField!
