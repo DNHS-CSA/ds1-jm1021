@@ -22,10 +22,9 @@ class ReverseController: UIViewController {
     }
 
     @IBAction func reverseIt(_ sender: Any) {
-        revOut1.text = textIn.text
-        revOut2.text = textIn.text
-        revOut3.text = textIn.text
-
+        revOut1.text = reverseStringLoop( inText: textIn.text! )
+        revOut2.text = reverseStringArray( inText: textIn.text! )
+        revOut3.text = reverseStringRecursion( inText: textIn.text! )
     }
 }
 
