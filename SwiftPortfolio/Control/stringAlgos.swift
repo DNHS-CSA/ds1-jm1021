@@ -8,11 +8,13 @@
 
 import Foundation
 
+// Reverse string though concat to new string
 func revStringNew( inText:String ) -> String {
     let method = "New: "
     
     var i = 1;          // loop and index control
     var revText = ""    // reverse string holder
+    
     // Loop from last character until reaching 1st
     while ( i <= inText.count ) {
         // Uses String built in endIndex and offsetby
@@ -22,29 +24,36 @@ func revStringNew( inText:String ) -> String {
     return method + revText
 }
 
+// Reverse string by swapping 1st and last, 2nd and last-1, ...
 func revStringSwap( inText:String ) -> String {
-    
     let method = "Swap: "
-    var mutInText = inText      // mutator requires and inText is let
-    
+
     var i = 0                   // loop and index control
-    let j = inText.count / 2    // half way
+    var mutInText = inText      // reverse string holder
+    let j = mutInText.count / 2    // half way
+    
     // Loop from to ends to middle
     while ( i < j ) {
-        // Find index of items to swap
-        let swapI = inText.index(inText.startIndex, offsetBy: i)
-        let swap1 = inText[swapI]
-        let swapJ = inText.index(inText.endIndex, offsetBy: -(i+1))
-        let swap2 = inText[swapJ]
-        
-        // swap items (note: have not found index mutator)
-        mutInText.remove(at:swapI)
-        mutInText.insert(swap2, at: swapI)
-        mutInText.remove(at:swapJ)
-        mutInText.insert(swap1, at: swapJ)
+        // swap characters
+        swapChars(mutInText: &mutInText, i: i, j: -(i+1))
         i += 1
     }
-    
     return method + mutInText
 }
+
+// Swap characters, mutate String positions i & j
+func swapChars( mutInText: inout String, i:Int, j:Int) {
+    // find characters
+    let swapI = mutInText.index(mutInText.startIndex, offsetBy: i)
+    let swap1 = mutInText[swapI]
+    let swapJ = mutInText.index(mutInText.endIndex, offsetBy: j)
+    let swap2 = mutInText[swapJ]
+    
+    // swap items (note: have not found index mutator)
+    mutInText.remove(at:swapI)
+    mutInText.insert(swap2, at:swapI)
+    mutInText.remove(at:swapJ)
+    mutInText.insert(swap1, at:swapJ)
+}
+
 
