@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PythagControl.swift
 //  SwiftPortfolio
 //
 //  Created by John Mortensen on 3/9/20.
