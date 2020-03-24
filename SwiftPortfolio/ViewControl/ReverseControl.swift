@@ -22,9 +22,9 @@ class ReverseController: UIViewController {
     }
 
     @IBAction func reverseIt(_ sender: Any) {
-        revOut1.text = revStringNew( inText: textIn.text! )
-        revOut2.text = revStringSwap( inText: textIn.text! )
-        revOut3.text = revStringBuiltIn( inText: textIn.text! )
+        revOut1.text = revstrNew( inText: textIn.text! )
+        revOut2.text = revstrSwap( inText: textIn.text! )
+        revOut3.text = revstrBuiltIn( inText: textIn.text! )
     }
 }
 

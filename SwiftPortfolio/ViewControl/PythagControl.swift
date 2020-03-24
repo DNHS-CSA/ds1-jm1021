@@ -15,27 +15,30 @@ class PythagController: UIViewController {
     @IBOutlet weak var side2: UITextField!
     @IBOutlet weak var side3: UILabel!
     
+    // Sides of triangle
+    var triangle = (A: 0.0, B: 0.0, C: 0.0)
+    
     // Loads at initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Intialize Outlets
-        side1.text = "0.0"
-        side2.text = "0.0"
-        side3.text = "0.0"
+        side1.text = String(triangle.A)
+        side2.text = String(triangle.B)
+        side3.text = String(triangle.C)
     }
 
     // IBAction created with Drag from Storyboar
    @IBAction func calculate(sender: UIButton) {
-        // let is for values that are not modifed
-        let s1 = Float(side1.text!) // Input value, ! avoids errors
-        let s2 = Float(side2.text!)
+        // Set sides to input values
+        triangle.A = Double(side1.text!)! // Input value, !(Bang) avoids errors
+        triangle.B = Double(side2.text!)!
 
-        // Pythagorean Calculation
-        let s3 = sqrt( (s1! * s1!) + (s2! * s2!) )
+        // Pythagorean calculation
+        triangle.C = sqrt( (triangle.A * triangle.A) + (triangle.B * triangle.B) )
 
         // Set calcuation to screen
-        side3.text = String(s3)
+        side3.text = String(triangle.C)
         print("Pyth  \(side3.text!)")
     
     }

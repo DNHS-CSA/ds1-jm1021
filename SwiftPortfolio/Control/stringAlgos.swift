@@ -9,7 +9,7 @@
 import Foundation
 
 // Reverse string though concat to new string
-func revStringNew( inText:String ) -> String {
+func revstrNew( inText:String ) -> String {
     let method = "New: "
     
     var i = 1;          // loop and index control
@@ -25,7 +25,7 @@ func revStringNew( inText:String ) -> String {
 }
 
 // Reverse string by swapping 1st and last, 2nd and last-1, ...
-func revStringSwap( inText:String ) -> String {
+func revstrSwap( inText:String ) -> String {
     let method = "Swap: "
 
     var i = 0                   // loop and index control
@@ -35,21 +35,21 @@ func revStringSwap( inText:String ) -> String {
     // Loop from to ends to middle
     while ( i < j ) {
         // swap characters
-        swapChars(mutInText: &mutInText, i: i, j: -(i+1))
+        swapchars(mutInText: &mutInText, i: i, j: -(i+1))
         i += 1
     }
     return method + mutInText
 }
 
 // Reverse string by swapping 1st and last, 2nd and last-1, ...
-func revStringBuiltIn( inText:String ) -> String {
+func revstrBuiltIn( inText:String ) -> String {
     let method = "Built in: "
 
     return method + String(inText.reversed())
 }
 
 // Swap characters, mutate String positions i & j
-func swapChars( mutInText: inout String, i:Int, j:Int ) {
+func swapchars( mutInText: inout String, i:Int, j:Int ) {
     // find characters
     let swapI = mutInText.index(mutInText.startIndex, offsetBy: i)
     let swap1 = mutInText[swapI]
