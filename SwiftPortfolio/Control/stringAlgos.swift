@@ -41,11 +41,17 @@ func revstrSwap( inText:String ) -> String {
     return method + mutInText
 }
 
-// Reverse string by swapping 1st and last, 2nd and last-1, ...
+// Reverse string using built-in
 func revstrBuiltIn( inText:String ) -> String {
     let method = "Built in: "
 
     return method + String(inText.reversed())
+}
+
+// Reverse string
+func revstr( inText:String ) -> String {
+
+    return String(inText.reversed())
 }
 
 // Swap characters, mutate String positions i & j
