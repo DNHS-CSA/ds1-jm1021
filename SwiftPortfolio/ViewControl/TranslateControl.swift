@@ -44,10 +44,8 @@ class TranslateController: UIViewController {
         init(textIn: String) {
             self.token.word = textIn
             self.token.reversed = revstr( inText: textIn )
-            // self.token.pigged = pigstr(textIn)
-            self.token.pigged = textIn
-            // self.token.shorted = shortstr(textIn)
-            self.token.shorted = textIn
+            self.token.pigged = pigstr(inText: textIn)
+            self.token.shorted = shortstr(inText: textIn)
        }
     }
     

@@ -18,7 +18,7 @@ func revstrNew( inText:String ) -> String {
     // Loop from last character until reaching 1st
     while ( i <= inText.count ) {
         // Uses String built in endIndex and offsetby
-        revText = revText + String(inText[inText.index(inText.endIndex, offsetBy: -i)])
+        revText = revText + String( inText[inText.index(inText.endIndex, offsetBy: -i)] )
         i += 1
     }
     return method + revText
@@ -54,6 +54,48 @@ func revstr( inText:String ) -> String {
     return String(inText.reversed())
 }
 
+// Piglatin string builder
+func pigstr( inText:String ) -> String {
+    var mutInText = inText      // reverse string holder
+    
+    var count = 0;
+    while (count >= 0 && count < inText.count )
+    {
+        let front = mutInText.index(mutInText.startIndex, offsetBy: 0)
+        let back = mutInText.index(mutInText.endIndex, offsetBy: -1)
+        let frontChar = mutInText[front]
+        
+        let stringType = (i: count, c: frontChar.lowercased())
+        switch stringType {
+        
+        // leading vowel, ad "ya" to end
+        case (let i, let c) where (i == 0) && (c == "a" || c == "e" || c == "i" || c == "o" || c == "u" ) :
+            mutInText = mutInText + "ya"
+            count = -1;
+            break
+            
+        // vowel or y after first character, add "ay" to end
+        case ( _, let c) where (c == "a" || c == "e" || c == "i" || c == "o" || c == "u" || c == "y") :
+            mutInText = mutInText + "ay"
+            count = -1;
+            break
+            
+        // leading consonant, move front character to back, this can repeat until vowel condition met
+         default : /* done */
+            mutInText.remove(at:front)
+            mutInText.insert(frontChar, at:back)
+            count += 1
+            break
+        }
+    }
+    return mutInText
+}
+
+// Shorthand string builder
+func shortstr( inText:String ) -> String {
+    return inText
+}
+    
 // Swap characters, mutate String positions i & j
 func swapchars( mutInText: inout String, i:Int, j:Int ) {
     // find characters
