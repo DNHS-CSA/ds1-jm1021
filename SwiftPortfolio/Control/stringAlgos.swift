@@ -45,7 +45,7 @@ func revstrSwap( inText:String ) -> String {
 func revstrBuiltIn( inText:String ) -> String {
     let method = "Built in: "
 
-    return method + String(inText.reversed())
+    return method + revstr(inText: inText)
 }
 
 // Reverse string
