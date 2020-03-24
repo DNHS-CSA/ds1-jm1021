@@ -113,6 +113,9 @@
                                 <state key="normal" title="Translator">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2Na-tt-bGQ" kind="show" id="N9g-iW-EEn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lq-u4-odW">
                                 <rect key="frame" x="273" y="371" width="49" height="34"/>
@@ -170,6 +173,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwB-mV-Rqu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1707" y="-15"/>
+        </scene>
+        <!--Translator-->
+        <scene sceneID="EEY-Az-0pf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Translator" id="2Na-tt-bGQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Qif-wS-d2f"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RmZ-IB-KbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1635" y="174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hde-at-H3G">
