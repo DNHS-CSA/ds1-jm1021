@@ -56,7 +56,7 @@ func revstr( inText:String ) -> String {
 
 // Piglatin string builder
 func pigstr( inText:String ) -> String {
-    var mutInText = inText      // reverse string holder
+    var mutInText = inText      // piglatin string holder
     
     var count = 0;
     while (count >= 0 && count < inText.count )
@@ -65,17 +65,17 @@ func pigstr( inText:String ) -> String {
         let back = mutInText.index(mutInText.endIndex, offsetBy: -1)
         let frontChar = mutInText[front]
         
-        let stringType = (i: count, c: frontChar.lowercased())
-        switch stringType {
+        let charType = (i: count, c: frontChar.lowercased())
+        switch charType {
         
         // leading vowel, ad "ya" to end
-        case (let i, let c) where (i == 0) && (c == "a" || c == "e" || c == "i" || c == "o" || c == "u" ) :
+        case (let i, let c) where (i == 0) && ( isvowel(c: c) ) :
             mutInText = mutInText + "ya"
             count = -1;
             break
             
         // vowel or y after first character, add "ay" to end
-        case ( _, let c) where (c == "a" || c == "e" || c == "i" || c == "o" || c == "u" || c == "y") :
+        case ( _, let c) where ( isvowel(c: c) || c == "y") :
             mutInText = mutInText + "ay"
             count = -1;
             break
@@ -93,9 +93,52 @@ func pigstr( inText:String ) -> String {
 
 // Shorthand string builder
 func shortstr( inText:String ) -> String {
-    return inText
-}
     
+    // special words
+    let lc = inText.lowercased()
+    if (lc == "for") {
+        return "4"
+    } else if (lc == "to" || lc == "too" || lc == "two") {
+        return "2"
+    } else if (lc == "you" ) {
+        return "U"
+    }
+    
+    // shorthand mutatations
+    var mutInText = inText      // shorthand string holder
+    var count = 0;
+    while ( count < mutInText.count )
+    {
+        // character setup
+        let current = mutInText.index(mutInText.startIndex, offsetBy: count)
+        let frontChar = mutInText[current]
+        
+        // conditions of shorthand
+        let charType = (i: count, c: frontChar.lowercased())
+        switch charType {
+        
+        //  vowel, remove it
+        case (_, let c) where ( isvowel(c: c) ) :
+            mutInText.remove(at:current)
+            count += 1
+            break
+            
+         // consonant, do nothing
+         default : /* done */
+            count += 1
+            break
+        }
+    }
+    
+    return mutInText
+}
+ 
+// Vowel tester
+func isvowel(c: String) -> Bool
+{
+    return (c == "a" || c == "e" || c == "i" || c == "o" || c == "u" )
+}
+
 // Swap characters, mutate String positions i & j
 func swapchars( mutInText: inout String, i:Int, j:Int ) {
     // find characters
